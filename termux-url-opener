@@ -1,0 +1,44 @@
+#!/bin/bash
+
+echo "╔════════════════════════╗"
+echo "║ YOUTUBE DOWNLOAD       ║"
+echo "║ (requires yt-dlp       ║"
+echo "╠════════════════════════╝"
+echo
+echo
+echo "▶ 1. 144p video"
+echo "▶ 2. 360p video"
+echo "▶ 3. 480p video"
+echo "▶ 4. 720p video"
+echo "▶ 5. best video"
+echo
+echo "WARNING: You also need to fix issue #4100"
+echo
+command='-o /sdcard/youtube/%(title)s-[%(id)s].%(ext)s -f'
+read -p "▶ " opt
+
+if [ "$opt" -eq "1" ]
+then
+    yt-dlp $command 17 $1
+
+elif [ "$opt" -eq "2" ]
+then
+    yt-dlp $command 18 $1
+
+elif [ "$opt" -eq "3" ]
+then
+    yt-dlp $command 135 $1
+
+elif [ "$opt" -eq "4" ]
+then
+    yt-dlp $command 22 $1
+
+elif [ "$opt" -eq "5" ]
+then
+    yt-dlp $1
+
+else
+    echo "Invalid option..."
+    exit 1
+
+fi

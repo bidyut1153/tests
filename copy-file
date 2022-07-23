@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Copying 1 file..."
+echo "$1 --> /sdcard/shared"
+cp $1 /sdcard/shared
+echo "Copied $1 to /sdcard/shared"

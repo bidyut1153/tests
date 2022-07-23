@@ -1,0 +1,25 @@
+#!/bin/bash
+echo "Choose a file option"
+echo "1. editor" | lolcat
+echo "2. installer" | lolcat
+echo "3. copy" | lolcat
+echo
+read opt
+
+if [ "$opt" -eq "1" ]
+then
+    termux-chroot ~/bin/select-editor $1
+
+elif [ "$opt" -eq "2" ]
+then
+    termux-chroot ~/bin/deb-install $1
+
+elif [ "$opt" -eq "3" ]
+then
+    termux-chroot ~/bin/copy-file $1
+
+else
+    echo "Invalid option..."
+    exit 1
+
+fi

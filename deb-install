@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Deb installer..."
+echo "Please wait..."
+sleep 2
+echo
+read -p "Options?= " opt
+sleep 0.5
+dpkg $opt --install $1
+apt -f install -y
+echo "Done."
+

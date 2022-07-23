@@ -1,0 +1,42 @@
+#!/bin/bash
+
+echo "Please select a editor."
+echo "1. nano"
+echo "2. vim"
+echo "3. emacs"
+echo "4. busybox"
+echo "5. neovim"
+echo "6. micro"
+echo "7. kakoune"
+
+read -p "editor opt: " opt
+
+if [ "$opt" -eq "1" ]
+then
+    nano $1
+
+elif [ "$opt" -eq "2" ]
+then
+    vim $1
+
+elif [ "$opt" -eq "3" ]
+then
+    emacs $1
+
+elif [ "$opt" -eq "4" ]
+then
+    busybox vi $1
+
+elif [ "$opt" -eq "5" ]
+then
+    nvim $1
+
+elif [ "$opt" -eq "4" ]
+then
+    micro $1
+
+elif [ "$opt" -eq "5" ]
+then
+    kak $1
+
+fi
